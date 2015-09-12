@@ -69,6 +69,6 @@ class PhoneNumbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_number_params
-      params[:phone_number]
+      params.require(:phone_number).permit(:number, :person_id)
     end
 end
